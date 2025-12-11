@@ -15,9 +15,7 @@ const temperatures = [
  *  filterHighTemperatures(temperatures); // => [25, 28, 30, 27, 29, 26, 28, 30, 27, 26, 25, 28, 29, 27, 26]
  */
 function filterHighTemperatures(temps: number[]): number[] {
-  // Your code here
-
-  return []; // replace the empty array with what you see is fit
+return temps.filter((temp) => temp >= 25);
 }
 
 /**
@@ -28,9 +26,7 @@ function filterHighTemperatures(temps: number[]): number[] {
  *  filterLowTemperatures(temperatures); // => [19, 18, 19, 19]
  */
 function filterLowTemperatures(temps: number[]): number[] {
-  // Your code here
-
-  return []; // replace the empty array with what you see is fit
+return temps.filter((temp) => temp < 20);
 }
 
 /**
@@ -42,9 +38,7 @@ function filterLowTemperatures(temps: number[]): number[] {
  *  convertCelsiusToFahrenheit([25, 30, 20]); // => [77, 86, 68]
  */
 function convertCelsiusToFahrenheit(temps: number[]): number[] {
-  // Your code here
-
-  return []; // replace the empty array with what you see is fit
+return temps.map((temp) => (temp * 9/5) + 32);
 }
 
 /**
@@ -60,9 +54,11 @@ function convertCelsiusToFahrenheit(temps: number[]): number[] {
 type TemperatureLabel = "Warm" | "Mild" | "Cool";
 
 function labelTemperatures(temps: number[]): TemperatureLabel[] {
-  // Your code here
-
-  return []; // replace the empty array with what you see is fit
+return temps.map((temp) => {
+    if (temp >= 25) return "Warm";
+    if (temp >= 20) return "Mild";
+    return "Cool";
+});
 }
 
 /**
@@ -73,9 +69,7 @@ function labelTemperatures(temps: number[]): TemperatureLabel[] {
  *  getMaxTemperature([25, 30, 20]); // => 30
  */
 function getMaxTemperature(temps: number[]): number {
-  // Your code here
-
-  return -1; // replace -1 with what you see is fit
+    return Math.max(...temps);
 }
 
 /**
@@ -86,9 +80,7 @@ function getMaxTemperature(temps: number[]): number {
  *  getMinTemperature([25, 30, 20]); // => 20
  */
 function getMinTemperature(temps: number[]): number {
-  // Your code here
-
-  return -1; // replace -1 with what you see is fit
+return Math.min(...temps);
 }
 
 export {
